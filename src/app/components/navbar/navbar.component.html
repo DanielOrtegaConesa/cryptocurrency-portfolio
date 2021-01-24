@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div fxLayoutAlign="space-around center">
+            <mat-icon clas="logo">monetization_on</mat-icon>
+            <div class="txtlogo">
+                Cryptofolio
+            </div>
+        </div>
+        <mat-divider [vertical]="true"
+                     class="navdivider">
+        </mat-divider>
+
+        <button mat-button
+                [routerLink]="['/portfolio']"
+                routerLinkActive="active">
+            Portfolio
+        </button>
+        <button mat-button
+                [routerLink]="['/currency']"
+                routerLinkActive="active">
+            Currency
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,37 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+    <div fxLayout="column wrap">
+        <mat-form-field>
+            <mat-label>Amount</mat-label>
+            <input matInput
+                   [(ngModel)]="line.amount"
+                   type="number">
+            <button mat-button
+                    matSuffix
+                    mat-icon-button
+                    (click)="line.amount=0">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+
+
+        <mat-form-field>
+            <mat-label>Currency</mat-label>
+            <mat-select [(ngModel)]="line.currency.id"
+                        (ngModelChange)="currencyChange($event)">
+                <mat-option *ngFor="let currency of currencyOptions"
+                            [value]="currency.id">
+                    {{currency.acronym}} - {{currency.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button
+            [mat-dialog-close]="originalLine">Close</button>
+    <button mat-button
+            (click)="save()">Save</button>
+</div>

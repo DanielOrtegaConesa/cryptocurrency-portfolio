@@ -1,0 +1,11 @@
+<div class="page">
+    <app-portfolio-show fxLayout="row wrap"
+                        fxLayoutAlign="center"
+                        (portfolioChange)="managePortfolioChange($event)">
+    </app-portfolio-show>
+    <app-portfolio-lines-list [(portfolio)]="portfolio"
+                              fxLayout="row wrap"
+                              fxLayoutAlign="center"
+                              class="portfolioLines">
+    </app-portfolio-lines-list>
+</div>

@@ -1,0 +1,26 @@
+<mat-card fxFlexAlign="center"
+          *ngFor="let portfolio of portfolios; let ind = index"
+          [ngClass]="{'active':ind === active}"
+          (click)="changePortfolio(ind, portfolio)">
+    <mat-card-header>
+        <mat-card-title>{{portfolio.name}}</mat-card-title>
+        <mat-card-subtitle>{{portfolio.acronym}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions fxLayoutAlign="space-around">
+        <button mat-button
+                (click)="delete($event,portfolio,ind)">
+            <mat-icon color="warn">delete</mat-icon>
+        </button>
+        <button mat-button
+                (click)="edit($event, portfolio, ind)">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card fxFlexAlign="center"
+          (click)="edit($event)">
+    <button mat-button>
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-card>

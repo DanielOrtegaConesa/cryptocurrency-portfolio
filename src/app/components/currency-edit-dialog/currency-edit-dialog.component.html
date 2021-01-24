@@ -1,0 +1,36 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+    <div fxLayout="column wrap">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput
+                   [(ngModel)]="currency.name">
+            <button mat-button
+                    matSuffix
+                    mat-icon-button
+                    aria-label="Clear"
+                    (click)="currency.name=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Acronym</mat-label>
+            <input matInput
+                   [(ngModel)]="currency.acronym">
+            <button mat-button
+                    matSuffix
+                    mat-icon-button
+                    aria-label="Clear"
+                    (click)="currency.acronym=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button
+            [mat-dialog-close]="true">Close</button>
+    <button mat-button
+            (click)="save()">Save</button>
+</div>
